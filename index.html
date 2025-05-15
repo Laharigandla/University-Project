@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Therapy App (Indian Languages)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login/Register Container -->
+    <div id="authContainer" class="container">
+        <h2>Welcome to the Speech Therapy App</h2>
+        
+        <div id="loginSection">
+            <input type="text" id="loginUsername" placeholder="Username" required />
+            <input type="password" id="loginPassword" placeholder="Password" required />
+            <button id="loginBtn">Login</button>
+            <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+        </div>
+
+        <div id="registerSection" style="display:none;">
+            <input type="text" id="registerUsername" placeholder="Choose a Username" required />
+            <input type="password" id="registerPassword" placeholder="Choose a Password" required />
+            <button id="registerBtn">Register</button>
+            <p>Already have an account? <a href="#" id="showLogin">Back to Login</a></p>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="container" id="appContainer" style="display:none;">
+        <h1>🗣 SOFTWARE INTERVENTION FOR SPEECH AND SOUND DISORDER </h1>
+        <p>Speak a word, get feedback, and learn the correct pronunciation.</p>
+
+        <div class="controls">
+            <input type="text" id="wordInput" placeholder="Enter a word to practice..." />
+            <button id="speakBtn">🔊 Hear Correct Pronunciation</button>
+        </div>
+
+        <div class="controls">
+            <button id="recordBtn">🎙 Start Recording</button>
+            <button id="stopBtn" disabled>⏹ Stop</button>
+            <select id="languageSelect">
+                <option value="en-IN">English (India)</option>
+                <option value="hi-IN">हिन्दी (Hindi)</option>
+                <option value="te-IN">తెలుగు (Telugu)</option>
+                <option value="ta-IN">தமிழ் (Tamil)</option>
+                <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+                <option value="ml-IN">മലയാളം (Malayalam)</option>
+                <option value="bn-IN">বাংলা (Bengali)</option>
+                <option value="mr-IN">मराठी (Marathi)</option>
+            </select>
+            <button id="themeToggle">🌙 Toggle Mode</button>
+            <button id="pauseBtn" disabled>⏸ Pause</button>
+            <button id="resumeBtn" disabled>▶ Resume</button>
+
+        </div>
+
+        <p id="status">Status: Not Recording</p>
+        <canvas id="visualizer"></canvas>
+        <p id="timerDisplay">Time Remaining: 30s</p>
+
+        <h2>Playback:</h2>
+        <audio id="audioPlayback" controls></audio>
+        <a id="downloadLink" style="display:none;">📥 Download Recording</a>
+
+        <h2>Feedback:</h2>
+        <p id="feedback">Your speech analysis will appear here.</p>
+        <p id="score">Pronunciation Score: --%</p>
+        <p id="correction">Correct Pronunciation: --</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
